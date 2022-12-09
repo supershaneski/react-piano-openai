@@ -3,6 +3,10 @@ react-piano-openai
 
 This is a piano application using [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) built in React with the help of [OpenAI ChatGPT](https://openai.com/blog/chatgpt/).
 
+# Application UI
+
+![Piano App](./docs/App.png "Piano App")
+
 # Motivation
 
 I am trying to test how an AI, in this case `OpenAI ChatGPT`, could help a developer create something.
