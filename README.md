@@ -5,7 +5,7 @@ This is a piano application using [Web Audio API](https://developer.mozilla.org/
 
 # Motivation
 
-I am trying to test how an AI, in this case `OpenAI ChatGPT`, could help a developer to create something.
+I am trying to test how an AI, in this case `OpenAI ChatGPT`, could help a developer create something.
 
 Here are the screenshots of the conversation:
 
@@ -19,8 +19,9 @@ I adapted the given code from vanilla JS to be used in React and with minor chan
 
 It is very amazing how far AI technology have come.
 Rather than seeing it as a threat, I think AI can complement the work of developers.
-The immediate effect, I think, is that this could replace, to a certain degree, using forums. Often times, specially the beginners, they face snarky replies when asking questions in such sites. Using AI would be a definite improvement.
+The immediate effect, I think, is that this could replace, to a certain degree, using forums. Often times, specially the beginners, they face snarky replies when asking questions in such sites. Using AI would definitely be an improvement.
 
+However, I think, to fully utilize such an AI, the developer needs to write good prompts. They should know when the reply will work or not since there is no guarantee that the given code will actually run.
 
 # Getting Started
 
