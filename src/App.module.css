@@ -1,0 +1,13 @@
+.container {
+  background-color: #555;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pianoKeys {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
