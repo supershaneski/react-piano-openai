@@ -6,8 +6,51 @@
   align-items: center;
 }
 
-.pianoKeys {
+.keys {
   position: relative;
+  width: 80%;
+  height: 50%;
+}
+
+.whiteKeys {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+.white {
+  border-radius: 0px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 22em 2.5em 1em 2.5em;
+  background-color: #fff;
+  text-align: center;
+}
+
+.blackKeys {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+.black {
+  border-radius: 0px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  width: 77px;
+  padding: 20px 0px 0px 0px;
+  background-color: #000;
+  text-align: center;
+}
+
+.skipKey {
+  width: 77px;
 }

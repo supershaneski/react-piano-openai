@@ -4,17 +4,36 @@ import classes from './App.module.css'
 // Create an array of piano key frequencies
 const pianoKeys = [
   { frequency: 261.63, label: "C" },
-  { frequency: 277.18, label: "C#/Db" },
+  { frequency: 277.18, label: "C# Db" },
   { frequency: 293.66, label: "D" },
-  { frequency: 311.13, label: "D#/Eb" },
+  { frequency: 311.13, label: "D# Eb" },
   { frequency: 329.63, label: "E" },
   { frequency: 349.23, label: "F" },
-  { frequency: 369.99, label: "F#/Gb" },
+  { frequency: 369.99, label: "F# Gb" },
   { frequency: 392.00, label: "G" },
-  { frequency: 415.30, label: "G#/Ab" },
+  { frequency: 415.30, label: "G# Ab" },
   { frequency: 440.00, label: "A" },
-  { frequency: 466.16, label: "A#/Bb" },
+  { frequency: 466.16, label: "A# Bb" },
   { frequency: 493.88, label: "B" },
+]
+
+const whiteKeys = [
+  { frequency: 261.63, label: "C" },
+  { frequency: 293.66, label: "D" },
+  { frequency: 329.63, label: "E" },
+  { frequency: 349.23, label: "F" },
+  { frequency: 392.00, label: "G" },
+  { frequency: 440.00, label: "A" },
+  { frequency: 493.88, label: "B" },
+]
+
+const blackKeys = [
+  { frequency: 277.18, label: "C# Db" },
+  { frequency: 311.13, label: "D# Eb" },
+  { frequency: 311.13, label: "D# Eb", skip: true },
+  { frequency: 369.99, label: "F# Gb" },
+  { frequency: 415.30, label: "G# Ab" },
+  { frequency: 466.16, label: "A# Bb" },
 ]
 
 function App() {
@@ -61,9 +80,8 @@ function App() {
 
   }
 
-  return (
-    <div className={classes.container}>
-      <div className={classes.pianoKeys}>
+  /*
+  <div className={classes.pianoKeys}>
         {
           pianoKeys.map((pianoKey) => {
             return (
@@ -71,6 +89,41 @@ function App() {
             )
           })
         }
+      </div>
+  */
+  
+  return (
+    <div className={classes.container}>
+      <div className={classes.keys}>
+        <div className={classes.whiteKeys}>
+          {
+            whiteKeys.map((pianoKey) => {
+              return (
+                <button 
+                key={pianoKey.label} 
+                className={classes.white}
+                onClick={handleButtonPress(pianoKey.frequency)}>{pianoKey.label}</button>
+              )
+            })
+          }
+        </div>
+        <div className={classes.blackKeys}>
+          {
+            blackKeys.map((pianoKey) => {
+
+              if(pianoKey.skip) {
+                return <div className={classes.skipKey} />
+              }
+
+              return (
+                <button 
+                key={pianoKey.label} 
+                className={classes.black}
+                onClick={handleButtonPress(pianoKey.frequency)}>{pianoKey.label}</button>
+              )
+            })
+          }
+        </div>
       </div>
     </div>
   )
