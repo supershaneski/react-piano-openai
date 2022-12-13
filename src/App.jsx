@@ -30,7 +30,7 @@ const whiteKeys = [
 const blackKeys = [
   { frequency: 277.18, label: "C# Db" },
   { frequency: 311.13, label: "D# Eb" },
-  { frequency: 311.13, label: "D# Eb", skip: true },
+  { frequency: 0, label: "skip", skip: true },
   { frequency: 369.99, label: "F# Gb" },
   { frequency: 415.30, label: "G# Ab" },
   { frequency: 466.16, label: "A# Bb" },
@@ -42,8 +42,14 @@ function App() {
 
   React.useEffect(() => {
 
-    // Create an AudioContext object
-    audioContext.current = new AudioContext();
+    try {
+
+      // Create an AudioContext object
+      audioContext.current = new AudioContext();
+
+    } catch(err) {
+      //
+    }
 
   }, [])
 
@@ -80,18 +86,6 @@ function App() {
 
   }
 
-  /*
-  <div className={classes.pianoKeys}>
-        {
-          pianoKeys.map((pianoKey) => {
-            return (
-              <button key={pianoKey.label} onClick={handleButtonPress(pianoKey.frequency)}>{pianoKey.label}</button>
-            )
-          })
-        }
-      </div>
-  */
-  
   return (
     <div className={classes.container}>
       <div className={classes.keys}>
@@ -112,7 +106,7 @@ function App() {
             blackKeys.map((pianoKey) => {
 
               if(pianoKey.skip) {
-                return <div className={classes.skipKey} />
+                return <div key={pianoKey.label}  className={classes.skipKey} />
               }
 
               return (

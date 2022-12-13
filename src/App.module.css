@@ -1,9 +1,11 @@
 .container {
+  position: relative;
   background-color: #555;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 
 .keys {
@@ -28,6 +30,7 @@
   border-bottom-right-radius: 8px;
   padding: 22em 2.5em 1em 2.5em;
   background-color: #fff;
+  color: #000;
   text-align: center;
 }
 
@@ -48,6 +51,7 @@
   width: 77px;
   padding: 20px 0px 0px 0px;
   background-color: #000;
+  color: #fff;
   text-align: center;
 }
 
