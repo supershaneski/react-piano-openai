@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/react-piano-openai/",
   plugins: [react()],
   server: {
-    https: false,
+    https: true,
   },
   build: {
     outDir: "build",

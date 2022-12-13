@@ -42,3 +42,45 @@ $ npm start
 ```
 
 Open your browser to `http://localhost:5173/` or some other port depending on the availability.
+
+# Deployment
+
+To deploy in github pages, first install `gh-pages`
+
+```sh
+$ npm install gh-pages --save-dev
+```
+
+Add `homepage` property in `package.json` with this format `https://{username}:github.io/{project-name}
+
+```javascript
+"homepage": "https://supershaneski.github.io/react-piano-openai",
+```
+
+Add the following scripts
+
+```javascript
+"scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+```
+
+Edit `vite.config.js`
+
+```javascript
+export default defineConfig({
+  base: "/react-piano-openai/",
+  plugins: [react()],
+  build: {
+    outDir: "build",
+```
+
+Push the app to the `GitHub` repository
+
+```sh
+$ npm run deploy -- -m "deploy react app to github pages"
+```
+
+## Configure GitHub Pages
+
+See reference [page](https://github.com/gitname/react-gh-pages)
